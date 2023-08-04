@@ -13,30 +13,35 @@ variables:
   artifactFeed: 'NugetFeed' # Replace with your Azure Artifacts feed name
   versionSuffix: $(Build.BuildNumber)
 
-steps:
-- task: DotNetCoreCLI@2
-  displayName: 'Build Solution'
-  inputs:
-    command: 'restore'
-    projects: '**/*.csproj'
+jobs:
+- job: BuildAndPublish
+  pool:
+    vmImage: 'windows-latest'
+    parallel: 1  # Adjust the parallelism level as needed
+  steps:
+  - task: DotNetCoreCLI@2
+    displayName: 'Build Solution'
+    inputs:
+      command: 'restore'
+      projects: '**/*.csproj'
     
-- task: DotNetCoreCLI@2
-  displayName: 'Build and Pack NuGet Package'
-  inputs:
-    command: 'pack'
-    packagesToPack: '**/*.csproj'
-    versioningScheme: 'byBuildNumber'
-    versionSuffix: $(versionSuffix)
-    includesymbols: true
-    includesource: true
+  - task: DotNetCoreCLI@2
+    displayName: 'Build and Pack NuGet Package'
+    inputs:
+      command: 'pack'
+      packagesToPack: '**/*.csproj'
+      versioningScheme: 'byBuildNumber'
+      versionSuffix: $(versionSuffix)
+      includesymbols: true
+      includesource: true
 
-- task: NuGetAuthenticate@0
-  displayName: 'NuGet Authenticate'
+  - task: NuGetAuthenticate@0
+    displayName: 'NuGet Authenticate'
 
-- task: NuGetCommand@2
-  displayName: 'NuGet Publish'
-  inputs:
-    command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-    nuGetFeedType: 'internal'
-    publishVstsFeed: '$(artifactFeed)'
+  - task: NuGetCommand@2
+    displayName: 'NuGet Publish'
+    inputs:
+      command: 'push'
+      packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+      nuGetFeedType: 'internal'
+      publishVstsFeed: '$(artifactFeed)'
