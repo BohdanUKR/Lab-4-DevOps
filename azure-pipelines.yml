@@ -10,7 +10,9 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  artifactFeed: 'bdrozd-new'
+  artifactFeed: 'YourFeedName' # Replace with your feed name
+  packageId: 'StringLibraryModified' # New package ID to avoid conflicts
+  packageVersion: '1.0.1' # Set your desired version number here
 
 jobs:
 - job: BuildAndPublish
@@ -30,9 +32,10 @@ jobs:
       command: 'pack'
       projects: '**/*.csproj'
       versioningScheme: 'off'
-      version: '1.0.0'  # Set your desired version number here
+      version: $(packageVersion)
       includesymbols: true
       includesource: true
+      arguments: '--configuration $(buildConfiguration) --package-id $(packageId)' # Use the modified package ID
 
   - task: NuGetAuthenticate@0
     displayName: 'NuGet Authenticate'
@@ -43,4 +46,4 @@ jobs:
       command: 'push'
       packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
       nuGetFeedType: 'internal'
-      publishVstsFeed: '$(artifactFeed)'
+      publishVstsFeed: $(artifactFeed)
