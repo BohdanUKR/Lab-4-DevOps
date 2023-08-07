@@ -10,9 +10,9 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  artifactFeed: 'YourFeedName' # Replace with your feed name
-  packageId: 'StringLibraryModified' # New package ID to avoid conflicts
-  packageVersion: '1.0.1' # Set your desired version number here
+  artifactFeed: 'bdrozd-new' # Replace with your feed name
+  packageId: 'StringLibraryModified1' # New package ID to avoid conflicts
+  packageVersion: '1.0.2' # Set your desired version number here
 
 jobs:
 - job: BuildAndPublish
