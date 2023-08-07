@@ -28,9 +28,9 @@ jobs:
     displayName: 'Build and Pack NuGet Package'
     inputs:
       command: 'pack'
-      packagesToPack: '**/*.csproj'
-      versioningScheme: 'byEnvVar'
-      versionEnvVar: 'MY_VERSION'
+      projects: '**/*.csproj'
+      versioningScheme: 'off'
+      version: '1.0.0'  # Set your desired version number here
       includesymbols: true
       includesource: true
 
