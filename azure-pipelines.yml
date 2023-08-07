@@ -10,14 +10,13 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  artifactFeed: 'NugetFeed' # Replace with your Azure Artifacts feed name
-  versionSuffix: 1.0.0
+  artifactFeed: 'NugetFeed'
 
 jobs:
 - job: BuildAndPublish
   pool:
     vmImage: 'windows-latest'
-    parallel: 1  # Adjust the parallelism level as needed
+    parallel: 1
   steps:
   - task: DotNetCoreCLI@2
     displayName: 'Build Solution'
@@ -30,8 +29,8 @@ jobs:
     inputs:
       command: 'pack'
       packagesToPack: '**/*.csproj'
-      versioningScheme: 'byBuildNumber'
-      versionSuffix: $(versionSuffix)
+      versioningScheme: 'byEnvVar'
+      versionEnvVar: 'MY_VERSION'
       includesymbols: true
       includesource: true
 
