@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "OikDlgh+lib1Vq2c6np77gKddflWzF3V98GP+5hYhkVPOlK3gs3RV0fJElXYKFUmHFm5dKXX00BE8TgpDCV8hA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\bodya\\source\\repos\\ClassLibraryProjects\\ShowCase\\ShowCase.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bodya\\.nuget\\packages\\mystringlibrary\\1.0.1\\mystringlibrary.1.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

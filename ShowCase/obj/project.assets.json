@@ -1,0 +1,117 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "MyStringLibrary/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/StringLibrary.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/StringLibrary.dll": {}
+        }
+      },
+      "StringLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/StringLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StringLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MyStringLibrary/1.0.1": {
+      "sha512": "ESDaupv9FMDNISYyl45MUXUVbAkb/K7eqxn/XIWDkoSe6BYcYwsSJCzN1da1wpNc5cLC0QslDEqbKhXoPzLe8Q==",
+      "type": "package",
+      "path": "mystringlibrary/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        "lib/net6.0/StringLibrary.dll",
+        "mystringlibrary.1.0.1.nupkg.sha512",
+        "mystringlibrary.nuspec"
+      ]
+    },
+    "StringLibrary/1.0.0": {
+      "type": "project",
+      "path": "../StringLibrary/StringLibrary.csproj",
+      "msbuildProject": "../StringLibrary/StringLibrary.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "MyStringLibrary >= 1.0.1",
+      "StringLibrary >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\bodya\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\bodya\\source\\repos\\ClassLibraryProjects\\ShowCase\\ShowCase.csproj",
+      "projectName": "ShowCase",
+      "projectPath": "C:\\Users\\bodya\\source\\repos\\ClassLibraryProjects\\ShowCase\\ShowCase.csproj",
+      "packagesPath": "C:\\Users\\bodya\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bodya\\source\\repos\\ClassLibraryProjects\\ShowCase\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\bodya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "https://pkgs.dev.azure.com/bdrozd/_packaging/bdrozd-new/nuget/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "C:\\Users\\bodya\\source\\repos\\ClassLibraryProjects\\StringLibrary\\StringLibrary.csproj": {
+              "projectPath": "C:\\Users\\bodya\\source\\repos\\ClassLibraryProjects\\StringLibrary\\StringLibrary.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "dependencies": {
+          "MyStringLibrary": {
+            "target": "Package",
+            "version": "[1.0.1, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
