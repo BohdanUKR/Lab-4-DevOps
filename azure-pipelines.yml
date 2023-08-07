@@ -11,7 +11,7 @@ pool:
 variables:
   buildConfiguration: 'Release'
   artifactFeed: 'NugetFeed' # Replace with your Azure Artifacts feed name
-  versionSuffix: '1.0.0'
+  versionSuffix: 1.0.0
 
 jobs:
 - job: BuildAndPublish
