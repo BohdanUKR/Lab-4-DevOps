@@ -12,7 +12,7 @@ variables:
   buildConfiguration: 'Release'
   artifactFeed: 'bdrozd-new' # Replace with your feed name
   packageId: 'StringLibraryModified' # New package ID to avoid conflicts
-  packageVersion: '1.1.3' # Set your desired version number here
+  packageVersion: '1.1.4' # Set your desired version number here
 
 jobs:
 - job: BuildAndPublish
