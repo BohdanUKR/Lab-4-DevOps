@@ -10,7 +10,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  artifactFeed: 'NugetFeed'
+  artifactFeed: 'bdrozd-new'
 
 jobs:
 - job: BuildAndPublish
