@@ -30,7 +30,7 @@ jobs:
       command: 'pack'
       projects: '**/*.csproj'
       versioningScheme: 'off'
-      version: '1.0.0'  # Set your desired version number here
+      version: '2.0.0'  # Set your desired version number here
       includesymbols: true
       includesource: true
 
